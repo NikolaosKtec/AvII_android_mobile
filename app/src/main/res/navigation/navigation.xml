@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_home"
+    >
+
+    <fragment
+        android:id="@id/fragment_home"
+        android:name="com.example.segundaprova_jogos.HomeFragment"
+        android:label="Página principal"
+        tools:layout="@layout/fragment_home"
+        >
+        <action
+            android:id="@+id/action_frag1_to_fragCadastrar"
+            app:destination="@id/fragment_cadastrar"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+
+        />
+<!--        app:enterAnim="@android:anim/slide_out_right"-->
+    </fragment>
+
+    <fragment
+        android:id="@id/fragment_cadastrar"
+        android:name="com.example.segundaprova_jogos.CadastrarJogoFragment"
+        android:label="Cadastrar Jogo"
+        tools:layout="@layout/fragment_cadastrar_jogo">
+
+        <action
+            android:id="@+id/action_binding_cad"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/fragment_home"
+            app:popUpToInclusive="false"
+        />
+
+<!--        app:enterAnim="@android:anim/slide_out_right"-->
+    </fragment>
+</navigation>
